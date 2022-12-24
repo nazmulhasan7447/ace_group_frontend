@@ -1,0 +1,9 @@
+.view-content h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.slide-inner img {
+  height: auto;
+  max-width: 100%;
+  border: 0;
+}

@@ -1,0 +1,23 @@
+.billboard-mobile {
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center top;
+  z-index: auto;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.billboard {
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: left top;
+  z-index: auto;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}

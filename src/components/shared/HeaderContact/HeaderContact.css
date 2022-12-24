@@ -1,0 +1,19 @@
+.layout--onecol .layout__region {
+  width: 100%;
+}
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.contact-email-icon {
+  margin-right: 5px;
+  margin-left: 10px;
+  font-size: 25px;
+  margin-top: -3px;
+}

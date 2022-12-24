@@ -1,0 +1,9 @@
+.nav {
+  display: block !important;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+footer {
+  margin-top: 45px;
+}
