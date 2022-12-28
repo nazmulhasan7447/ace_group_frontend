@@ -1,11 +1,23 @@
-import React, { useContext } from "react";
+import { size } from "lodash";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AppContext } from "../../../App";
+import BASE_URL from "../../../utils/BaseURL";
 import { scrollToTop } from "../customMethod/scrollToTop";
 import "./Footer.css";
 
 const Footer = () => {
+  const [bankingFinanceServices, setBankingFinanceServices] = useState("");
   const { contextData } = useContext(AppContext);
+
+  useEffect(() => {
+    fetch(`${BASE_URL}/api-banking-finance-services/`)
+      .then((response) => response.json())
+      .then((data) => setBankingFinanceServices(data))
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <div className="footer-padding">
@@ -46,39 +58,14 @@ const Footer = () => {
             <h2 id="block-footerbankingfinance-menu">Banking &amp; Finance</h2>
             <ul className="menu nav">
               <li>
-                <Link to="/services/investment-bank" onClick={scrollToTop}>
-                  Investment Bank
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/holdings" onClick={scrollToTop}>
-                  Holdings
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/money-exchange" onClick={scrollToTop}>
-                  Money Exchange
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/leasing" onClick={scrollToTop}>
-                  Leasing
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/credit" onClick={scrollToTop}>
-                  Credit
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/capital-management" onClick={scrollToTop}>
-                  Capital Management
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/private-equity" onClick={scrollToTop}>
-                  Private Equity{" "}
-                </Link>
+                {size(bankingFinanceServices) &&
+                  bankingFinanceServices?.map((item) => {
+                    return (
+                      <Link to={`/services/${item?.id}`} onClick={scrollToTop}>
+                        {item?.service_category?.service_name}
+                      </Link>
+                    );
+                  })}
               </li>
             </ul>
           </nav>

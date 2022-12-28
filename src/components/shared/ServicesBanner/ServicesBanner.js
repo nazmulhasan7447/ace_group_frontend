@@ -11,7 +11,6 @@ const ServicesBanner = () => {
     fetch(`${BASE_URL}/api-banking-finance-services/`)
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         if (result) {
           setServices(result);
         }
