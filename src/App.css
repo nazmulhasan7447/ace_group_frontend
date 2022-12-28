@@ -934,16 +934,16 @@ body .breaker-contact a:focus {
   color: #e1af5a;
 }
 
-/* body .getintouch { */
-/* background: url("https://www.acegroup.com.my/sites/default/files/2018-04/contat-landscape-mobile.jpg"); */
-/* no-repeat 0 0; */
-/* background-repeat: no-repeat;
+body .getintouch {
+  /* background: url("https://www.acegroup.com.my/sites/default/files/2018-04/contat-landscape-mobile.jpg"); */
+  /* no-repeat 0 0; */
+  /* background-repeat: no-repeat;
   background-size: cover;
   text-align: center; */
-/*padding: 12rem 0;*/
-/* position: relative; */
-/* background-position: center; */
-/* } */
+  /* padding: 12rem 0; */
+  position: relative;
+  background-position: center;
+}
 
 /*
 body .getintouch a {
@@ -1099,10 +1099,13 @@ body #bespoke-slider {
 
 .discover-youtube-slider .field--name-field-thumbnail {
   position: relative;
+  min-height: 250px;
+  height: 250px;
 }
 
 .discover-youtube-slider .field--name-field-thumbnail img {
   cursor: pointer;
+  height: 100%;
 }
 
 .discover-youtube-slider .field--name-field-thumbnail img,

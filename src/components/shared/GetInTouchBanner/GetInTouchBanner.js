@@ -7,7 +7,6 @@ const GetInTouchBanner = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   const [topFooterBanner, setTopFooterBanner] = useState({});
-  console.log("topFooterBanner: ", topFooterBanner);
 
   useEffect(() => {
     fetch(`${BASE_URL}/api-top-footer-banner/`)
@@ -29,7 +28,6 @@ const GetInTouchBanner = () => {
         <div className="layout layout--onecol">
           <div className="layout__region layout__region--content">
             <div className="field field--name-body field--type-text-with-summary field--label-hidden field--item">
-              {console.log(topFooterBanner?.banner)}
               <div
                 className="getintouch"
                 style={{

@@ -2,8 +2,13 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+.slide-inner {
+  width: auto;
+  height: 250px;
+}
 .slide-inner img {
-  height: auto;
+  height: 100%;
   max-width: 100%;
   border: 0;
 }
