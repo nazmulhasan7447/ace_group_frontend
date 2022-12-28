@@ -9,7 +9,6 @@ import parse from "html-react-parser";
 
 const People = () => {
   const peopleId = useParams();
-  console.log(peopleId);
   const [currentPeople, setCurrentPeople] = useState({});
 
   useEffect(() => {
