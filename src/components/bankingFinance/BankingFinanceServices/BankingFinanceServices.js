@@ -19,7 +19,6 @@ const BankingFinanceServices = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result?.id) {
-          console.log(result);
           setBankingFinanceServiceInfo(result);
         } else {
           navigate("*");

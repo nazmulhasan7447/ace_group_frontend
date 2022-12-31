@@ -9,6 +9,7 @@ import "./Footer.css";
 const Footer = () => {
   const [bankingFinanceServices, setBankingFinanceServices] = useState("");
   const { contextData } = useContext(AppContext);
+  const [otherServiceCategories, setOtherServiceCategories] = useState([]);
 
   useEffect(() => {
     fetch(`${BASE_URL}/api-banking-finance-services/`)
@@ -16,6 +17,13 @@ const Footer = () => {
       .then((data) => setBankingFinanceServices(data))
       .catch((err) => {
         console.log(err);
+      });
+
+    // other services category
+    fetch(`${BASE_URL}/api-service-categories/`)
+      .then((response) => response.json())
+      .then((data) => {
+        setOtherServiceCategories(data);
       });
   }, []);
 
@@ -76,17 +84,26 @@ const Footer = () => {
           >
             <h2 id="block-footerothersolutions-menu">Other Services</h2>
             <ul className="menu nav">
-              <li>
-                <Link to="/services/corporation" onClick={scrollToTop}>
-                  Corporation
-                </Link>
-              </li>
-              <li>
+              {size(otherServiceCategories)
+                ? otherServiceCategories?.map((item) => {
+                    return (
+                      <li>
+                        <Link
+                          to={`/other-services/${item?.id}`}
+                          onClick={scrollToTop}
+                        >
+                          {item?.name}
+                        </Link>
+                      </li>
+                    );
+                  })
+                : ""}
+              {/* <li>
                 <Link to="/services/asiacyberx" onClick={scrollToTop}>
                   AsiacyberX
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link to="/services/accelerator-network" onClick={scrollToTop}>
                   Accelerator Network
                 </Link>
@@ -108,7 +125,7 @@ const Footer = () => {
                 <Link to="/services/advisory" onClick={scrollToTop}>
                   Advisory
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </nav>
           <nav

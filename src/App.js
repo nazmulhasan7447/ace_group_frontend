@@ -16,6 +16,8 @@ import {
   Corporation,
   PicturesEntertainment,
 } from "./components/otherServices";
+// import { OtherServiceDetails } from "./components/otherServices/OtherServiceDetails";
+import OtherServiceDetails from "./components/otherServices/OtherServiceDetails";
 import People from "./components/People/People";
 import Footer from "./components/shared/Footer/Footer";
 import Navbar from "./components/shared/Navbar/Navbar";
@@ -49,6 +51,9 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="discovery" element={<Corporate />} />
           <Route path="services/:id" element={<BankingFinanceServices />} />
+
+          <Route path="other-services/:id" element={<OtherServiceDetails />} />
+
           <Route path="services/corporation" element={<Corporation />} />
           <Route path="services/asiacyberx" element={<Asiacyberx />} />
           <Route
