@@ -231,55 +231,6 @@ const Navbar = () => {
                           );
                         })
                       : ""}
-
-                    {/* <li>
-                      <HashLink
-                        onClick={() => setActiveList(false)}
-                        to="/services/holdings"
-                      >
-                        <span>Holdings</span>
-                      </HashLink>
-                    </li>
-                    <li>
-                      <HashLink
-                        onClick={() => setActiveList(false)}
-                        to="/services/money-exchange"
-                      >
-                        <span>Money Exchange</span>
-                      </HashLink>
-                    </li>
-                    <li>
-                      <HashLink
-                        onClick={() => setActiveList(false)}
-                        to="/services/leasing"
-                      >
-                        <span>Leasing</span>
-                      </HashLink>
-                    </li>
-                    <li>
-                      <HashLink
-                        onClick={() => setActiveList(false)}
-                        to="/services/credit"
-                      >
-                        <span>Credit</span>
-                      </HashLink>
-                    </li>
-                    <li>
-                      <HashLink
-                        onClick={() => setActiveList(false)}
-                        to="/services/capital-management"
-                      >
-                        <span>Capital Management</span>
-                      </HashLink>
-                    </li>
-                    <li>
-                      <HashLink
-                        onClick={() => setActiveList(false)}
-                        to="/services/private-equity"
-                      >
-                        <span>Private Equity</span>
-                      </HashLink>
-                    </li> */}
                   </ul>
                   <ul
                     data-parentmenu="other"
@@ -437,62 +388,23 @@ const Navbar = () => {
                         &lt; Back
                       </Link>
                     </li>
-                    <li>
-                      <HashLink
-                        onClick={() => setActiveList(false)}
-                        to="/services/investment-bank"
-                      >
-                        <span>Investment Bank</span>
-                      </HashLink>
-                    </li>
-                    <li>
-                      <HashLink
-                        onClick={() => setActiveList(false)}
-                        to="/services/holdings"
-                      >
-                        <span>Holdings</span>
-                      </HashLink>
-                    </li>
-                    <li>
-                      <HashLink
-                        onClick={() => setActiveList(false)}
-                        to="/services/money-exchange"
-                      >
-                        <span>Money Exchange</span>
-                      </HashLink>
-                    </li>
-                    <li>
-                      <HashLink
-                        onClick={() => setActiveList(false)}
-                        to="/services/leasing"
-                      >
-                        <span>Leasing</span>
-                      </HashLink>
-                    </li>
-                    <li>
-                      <HashLink
-                        onClick={() => setActiveList(false)}
-                        to="/services/credit"
-                      >
-                        <span>Credit</span>
-                      </HashLink>
-                    </li>
-                    <li>
-                      <HashLink
-                        onClick={() => setActiveList(false)}
-                        to="/services/capital-management"
-                      >
-                        <span>Capital Management</span>
-                      </HashLink>
-                    </li>
-                    <li>
-                      <HashLink
-                        onClick={() => setActiveList(false)}
-                        to="/services/private-equity"
-                      >
-                        <span>Private Equity</span>
-                      </HashLink>
-                    </li>
+
+                    {size(bankingFinanceServices)
+                      ? bankingFinanceServices?.map((item) => {
+                          return (
+                            <li>
+                              <HashLink
+                                onClick={() => setActiveList(false)}
+                                to={`/services/${item?.id}`}
+                              >
+                                <span>
+                                  {item?.service_category?.service_name}
+                                </span>
+                              </HashLink>
+                            </li>
+                          );
+                        })
+                      : ""}
                   </ul>
                   <ul
                     data-parentmenu="other"
@@ -515,7 +427,7 @@ const Navbar = () => {
                             <li>
                               <HashLink
                                 onClick={() => setActiveList(false)}
-                                to="/services/corporation"
+                                to={`/other-services/${item?.id}`}
                               >
                                 <span>{item?.name}</span>
                               </HashLink>
@@ -523,22 +435,6 @@ const Navbar = () => {
                           );
                         })
                       : ""}
-
-                    {/* <li>
-                                         <HashLink onClick={() => setActiveList(false)} to="/services/corporation"><span>Corporation</span></HashLink>
-                                    </li> */}
-                    {/* <li>
-                                         <HashLink onClick={() => setActiveList(false)} to="/services/asiacyberx"><span>Asiacyberx</span></HashLink>
-                                    </li>
-                                    <li>
-                                         <HashLink onClick={() => setActiveList(false)} to="/services/accelerator-network"><span>Accelerator Network</span></HashLink>
-                                    </li>
-                                    <li>
-                                         <HashLink onClick={() => setActiveList(false)} to="/services/automobile"><span>EzDrive</span></HashLink>
-                                    </li>
-                                    <li>
-                                         <HashLink onClick={() => setActiveList(false)} to="/services/pictures-entertainment"><span>Pictures Entertainment</span></HashLink>
-                                    </li> */}
                   </ul>
                 </div>
               </div>

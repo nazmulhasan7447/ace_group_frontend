@@ -9,8 +9,6 @@ import parse from "html-react-parser";
 const OtherServiceDetails = () => {
   const [otherServiceDetails, setOtherServiceDetails] = useState({});
   const { id } = useParams();
-  console.log(id);
-  console.log(otherServiceDetails);
 
   useEffect(() => {
     fetch(`${BASE_URL}/api-service-details/${id}/`)
