@@ -6,6 +6,7 @@ import { scrollToTop } from "../customMethod/scrollToTop";
 
 const Insights = () => {
   const [insights, setInsights] = useState([]);
+  console.log("insights: ", insights);
 
   useEffect(() => {
     fetch(`${BASE_URL}/api-insights/`)
